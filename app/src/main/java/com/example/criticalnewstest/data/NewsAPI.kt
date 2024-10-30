@@ -12,12 +12,6 @@ interface NewsAPI {
 
     @GET("v2/top-headlines/sources")
     suspend fun getSources(
-        @Query("category")
-        category: String = "sports",
-        @Query("language")
-        language: String = "en",
-        @Query("country")
-        countryCode: String = "us",
         @Query("apiKey")
         apiKey: String = API_KEY,
         ): Response<SourcesResponse>
