@@ -1,6 +1,7 @@
-package com.example.criticalnewstest
+package com.example.criticalnewstest.views
 
 import NewsAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.criticalnews.viewmodels.NewsViewModel
+import com.example.criticalnewstest.R
 import com.example.criticalnewstest.adapters.SourceSpinnerAdapter
 import com.example.criticalnewstest.databinding.ActivityMainBinding
 import com.example.criticalnewstest.models.Source
@@ -62,6 +64,14 @@ class MainActivity : AppCompatActivity() {
                     topHeadlineNewDate.text = articles.firstOrNull()?.publishedAt
                     topHeadlineNewSource.text = articles.firstOrNull()?.source?.name
                     topHeadlinesRv.adapter = NewsAdapter(articles.drop(1))
+                    topHeadlineLayout.setOnClickListener {
+                        val firstArticle = articles.firstOrNull()
+                        if (firstArticle != null) {
+                            val intent = Intent(this@MainActivity, NewsDetailActivity::class.java)
+                            intent.putExtra("article", firstArticle)
+                            startActivity(intent)
+                        }
+                    }
                 } else {
                     topHeadlineNewTitle.text = ""
                     topHeadlineNewDescription.text = ""
