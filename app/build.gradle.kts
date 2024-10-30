@@ -56,5 +56,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
 }
