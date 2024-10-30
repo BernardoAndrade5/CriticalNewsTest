@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.criticalnewstest.Utils
+import com.example.criticalnewstest.utilities.Utils
 import com.example.criticalnewstest.models.Article
 import com.example.criticalnewstest.repositorys.NewsRepository
 import com.example.criticalnewstest.models.Source
@@ -36,7 +36,7 @@ class NewsViewModel @Inject constructor(
         Log.d("NewsViewModel", "Received ${articleList.size} articles")
 
         for (article in articleList) {
-            article.publishedAt = Utils.formatDate(article.publishedAt, "yyyy-MM-dd", "dd-MM-yyyy")
+            article.publishedAt = article.publishedAt?.let { Utils.formatDate(it, "yyyy-MM-dd", "dd-MM-yyyy") }
         }
 
         articles.postValue(articleList)

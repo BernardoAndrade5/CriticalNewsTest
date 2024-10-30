@@ -1,6 +1,6 @@
 package com.example.criticalnewstest.data
 
-import com.example.criticalnewstest.Constants.Companion.API_KEY
+import com.example.criticalnewstest.utilities.Constants.Companion.API_KEY
 import com.example.criticalnewstest.models.NewsResponse
 import com.example.criticalnewstest.models.SourcesResponse
 import retrofit2.Response

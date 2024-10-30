@@ -1,10 +1,9 @@
-package com.example.criticalnewstest
+package com.example.criticalnewstest.utilities
 
 import android.util.Log
 import androidx.core.net.ParseException
 import java.text.SimpleDateFormat
 import java.util.Locale
-import kotlin.text.format
 
 object Utils {
     fun formatDate(inputDate: String, inputFormat: String, outputFormat: String): String {

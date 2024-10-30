@@ -1,6 +1,6 @@
 package com.example.criticalnewstest.data
 
-import com.example.criticalnewstest.Constants.Companion.BASE_URL
+import com.example.criticalnewstest.utilities.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

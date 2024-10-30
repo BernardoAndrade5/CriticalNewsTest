@@ -1,4 +1,4 @@
-package com.example.criticalnewstest
+package com.example.criticalnewstest.utilities
 
 class Constants {
     companion object {
