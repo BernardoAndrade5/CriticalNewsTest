@@ -1,6 +1,5 @@
 package com.example.criticalnewstest.utilities
 
-import android.util.Log
 import androidx.core.net.ParseException
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -13,7 +12,6 @@ object Utils {
             val date = inputDateFormat.parse(inputDate)
             outputDateFormat.format(date)
         } catch (e: ParseException) {
-            Log.e("DateUtils", "Error parsing date: ${e.message}")
             inputDate
         }
     }
