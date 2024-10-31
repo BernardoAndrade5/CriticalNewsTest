@@ -19,8 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class NewsDetailActivity : AppCompatActivity(){
 
-    private lateinit var binding  : ActivityNewsDetailBinding
-    private val viewModel: NewsViewModel by viewModels()
+    lateinit var binding  : ActivityNewsDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +37,7 @@ class NewsDetailActivity : AppCompatActivity(){
 
     }
 
-    private fun getSelectedArticle(article: Article){
+    fun getSelectedArticle(article: Article){
         binding.apply {
             Glide.with(this@NewsDetailActivity)
                 .load(article.urlToImage)
