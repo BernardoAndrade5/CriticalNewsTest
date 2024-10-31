@@ -1,13 +1,9 @@
 import android.content.Intent
-import android.text.Layout
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.criticalnewstest.R
 import com.example.criticalnewstest.databinding.ItemNewsBinding
 import com.example.criticalnewstest.models.Article
 import com.example.criticalnewstest.views.NewsDetailActivity
@@ -24,12 +20,12 @@ class NewsAdapter(private val newsList: List<Article>) : RecyclerView.Adapter<Ne
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val currentItem = newsList[position]
-        currentItem?.let { article ->
+        currentItem.let { article ->
             holder.binding.newsTitle.text = currentItem.title
 
             Glide.with(holder.itemView.context)
                 .load(article.urlToImage)
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(android.R.drawable.stat_notify_sync)
                 .error(android.R.drawable.stat_notify_error)
                 .into(holder.binding.newsImage)
 

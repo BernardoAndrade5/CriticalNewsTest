@@ -14,7 +14,6 @@ class NewsRepository @Inject constructor(private val newsApi: NewsAPI){
         if (response.isSuccessful) {
             val newsResponse = response.body()
             if (newsResponse != null) {
-                Log.d("NewsRepository", "Received ${newsResponse.sources.size} sources")
                 return newsResponse.sources
             }
         }
@@ -30,9 +29,6 @@ class NewsRepository @Inject constructor(private val newsApi: NewsAPI){
                 val articlesListSorted = newsResponse.articles
                     .filter { it.source.id == source }
                     .sortedByDescending { it.publishedAt }
-                articlesListSorted.forEach { article ->
-                    Log.d("NewsRepository", "Article published at: ${article.publishedAt}")
-                }
                 return articlesListSorted
             }
         }

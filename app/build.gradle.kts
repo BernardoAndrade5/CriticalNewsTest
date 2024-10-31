@@ -50,13 +50,19 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.dagger.hilt)
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.core)
+    implementation(libs.androidx.runner)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+    implementation (libs.biometric)
+
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    testImplementation(libs.truth)
+
 }
